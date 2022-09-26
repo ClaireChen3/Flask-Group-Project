@@ -8,8 +8,17 @@
 {% block body %}
     <!- Try building a new body here, bootstrap is a wise choice ->
     <div class="px-5 py-5 mx-auto">
-        <h1 class="text-primary"><strong>Stubby Body</strong></h1>
-        <p class="text-secondary">Claire, Sreeja, Aliya, Ananya</p>
+        <h1 class="text-primary"><strong>Project Plan - Wordle Game</strong></h1>
+        <img class="img" src="{{ url_for('static', filename='assets/9-25-22-wordlepic.webp') }}" alt="Python Development" height="500">
+        <p class="text-secondary">- Product similar to online game "Wordle"</p>
+        <p class="text-secondary">- Normal mode:</p>
+        <small class="text-secondary">unknown five letter word, six guesses, each guess: letters that are in the word and in the correct placement appear green, letters that are in the word but not in the correct space appear blue, letters that are not in the word at all appear grey</small>
+        <p class="text-secondary">- Change the mode:</p>
+        <small class="text-secondary">change the number of letters in the words, change number of guesses allowed, specific genre of words, set time limit</small>
+        <p class="text-secondary">- Things to implement:</p>
+        <small class="text-secondary">clear words/start over, hint(reveal letter, etc), statistics after each game</small>
+        <p class="text-secondary">- Know how to implement:</p>
+        <small class="text-secondary">working keybaord, designed webpage, user input for submitted letter, animations after submitting letter</small>
     </div>
 {% endblock %}
 
