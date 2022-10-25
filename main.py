@@ -1,26 +1,80 @@
-# import "packages" from flask
-from flask import render_template  # import render_template from "public" flask libraries
-# import "packages" from "this" project
-from __init__ import app  # Definitions initialization
-from api import app_api # Blueprint import api definition
-from bp_projects.projects import app_projects # Blueprint directory import projects definition
+from rich.prompt import Prompt
+from rich.console import Console
+from random import choice
+from words import word_list
 
-app.register_blueprint(app_api) # register api routes
-app.register_blueprint(app_projects) # register api routes
+SQUARES = {
+    'correct_place': '🟩',
+    'correct_letter': '🟨',
+    'incorrect_letter': '⬛'
+}
 
-@app.errorhandler(404)  # catch for URL not found
-def page_not_found(e):
-    # note that we set the 404 status explicitly
-    return render_template('404.html'), 404
+WELCOME_MESSAGE = f'\n[white on blue] WELCOME TO WORDLE [/]\n'
+PLAYER_INSTRUCTIONS = "You may start guessing\n"
+GUESS_STATEMENT = "\nEnter your guess"
+ALLOWED_GUESSES = 6
 
-@app.route('/')  # connects default URL to index() function
-def index():
-    return render_template("index.html")
+def correct_place(letter):
+    return f'[black on green]{letter}[/]'
 
-@app.route('/stub/')  # connects /stub/ URL to stub() function
-def stub():
-    return render_template("stub.html")
 
-# this runs the application on the development server
-if __name__ == "__main__":
-    app.run(debug=True)
+def correct_letter(letter):
+    return f'[black on yellow]{letter}[/]'
+
+
+def incorrect_letter(letter):
+    return f'[black on white]{letter}[/]'
+
+
+def check_guess(guess, answer):
+    guessed = []
+    wordle_pattern = []
+    for i, letter in enumerate(guess):
+        if answer[i] == guess[i]:
+            guessed += correct_place(letter)
+            wordle_pattern.append(SQUARES['correct_place'])
+        elif letter in answer:
+            guessed += correct_letter(letter)
+            wordle_pattern.append(SQUARES['correct_letter'])
+        else:
+            guessed += incorrect_letter(letter)
+            wordle_pattern.append(SQUARES['incorrect_letter'])
+    return ''.join(guessed), ''.join(wordle_pattern)
+
+
+def game(console, chosen_word):
+    end_of_game = False
+    already_guessed = []
+    full_wordle_pattern = []
+    all_words_guessed = []
+
+    while not end_of_game:
+        guess = Prompt.ask(GUESS_STATEMENT).upper()
+        while len(guess) != 5 or guess in already_guessed:
+            if guess in already_guessed:
+                console.print("[red]You've already guessed this word!!\n[/]")
+            else:
+                console.print('[red]Please enter a 5-letter word!!\n[/]')
+            guess = Prompt.ask(GUESS_STATEMENT).upper()
+        already_guessed.append(guess)
+        guessed, pattern = check_guess(guess, chosen_word)
+        all_words_guessed.append(guessed)
+        full_wordle_pattern.append(pattern)
+
+        console.print(*all_words_guessed, sep="\n")
+        if guess == chosen_word or len(already_guessed) == ALLOWED_GUESSES:
+            end_of_game = True
+    if len(already_guessed) == ALLOWED_GUESSES and guess != chosen_word:
+        console.print(f"\n[red]WORDLE X/{ALLOWED_GUESSES}[/]")
+        console.print(f'\n[green]Correct Word: {chosen_word}[/]')
+    else:
+        console.print(f"\n[green]WORDLE {len(already_guessed)}/{ALLOWED_GUESSES}[/]\n")
+    console.print(*full_wordle_pattern, sep="\n")
+
+
+if __name__ == '__main__':
+    console = Console()
+    chosen_word = choice(word_list)
+    console.print(WELCOME_MESSAGE)
+    console.print(PLAYER_INSTRUCTIONS)
+    game(console, chosen_word)
