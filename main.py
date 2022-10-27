@@ -21,6 +21,10 @@ def index():
 def stub():
     return render_template("stub.html")
 
+@app.route('/WordNerd/')  # connects /WordNerd/ URL to () function
+def WordNerd():
+    return render_template("WordNerd.html")
+
 # this runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
