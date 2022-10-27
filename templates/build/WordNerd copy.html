@@ -1,9 +1,3 @@
-<!-- Extending the predefined project layout -->
-{% extends "layouts/base.html" %}
-
-<!- This variable sets name of browser tab  -->
-{% set project = "WordNerd" %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Nerd</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
-    <h1> Word Nerd </h1>
+    <h1> Word Nerd</h1>
     
     <div id="game-board">
 
     </div>
-    <script
+<script
 src="https://code.jquery.com/jquery-3.6.0.min.js"
 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 crossorigin="anonymous"></script>
@@ -27,23 +27,15 @@ crossorigin="anonymous"></script>
 </body>
 </html>
 
-# Need to link CSS and Javascript
+<div id="howtobutton">
+    <button class="howto-button">How to Play</button>
+</div>
 
-{% extends "layouts/base.html" %}
-{% set project = "Word Nerd" %}
+<div id="settings">
+    <button class="settings-button">Settings</button>
+</div>
+    
 
-{% block body %}
-    <!-- Start of body content specific to page -->
-    <div class="px-5 py-5 mx-auto">
-        <h1 class="text-black"><strong>Word Nerd</strong></h1>
-        <h1 class="text-black">
-        How to Play
-        Settings
-        </h1>
-    </div>
-{% endblock %}
-
-# Virtual Keyboard 
 <div id="keyboard">
     <div class="row1">
         <button class="keyboard-button">q</button>
@@ -56,6 +48,7 @@ crossorigin="anonymous"></script>
         <button class="keyboard-button">i</button>
         <button class="keyboard-button">o</button>
         <button class="keyboard-button">p</button>
+        <button class="keyboard-button">Del</button>
     </div>
     <div class="row2">
         <button class="keyboard-button">a</button>
@@ -67,9 +60,9 @@ crossorigin="anonymous"></script>
         <button class="keyboard-button">j</button>
         <button class="keyboard-button">k</button>
         <button class="keyboard-button">l</button>
+        <button class="keyboard-button">Enter</button>
     </div>
     <div class="row3">
-        <button class="keyboard-button">Del</button>
         <button class="keyboard-button">z</button>
         <button class="keyboard-button">x</button>
         <button class="keyboard-button">c</button>
@@ -77,7 +70,6 @@ crossorigin="anonymous"></script>
         <button class="keyboard-button">b</button>
         <button class="keyboard-button">n</button>
         <button class="keyboard-button">m</button>
-        <button class="keyboard-button">Enter</button>
     </div>
 </div>
 
