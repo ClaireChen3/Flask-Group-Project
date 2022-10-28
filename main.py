@@ -25,9 +25,9 @@ def stub():
 def WordNerd():
     return render_template("WordNerd.html")
 
-@app.route('/hello/')  # connects /hello/ URL to () function
-def hello():
-    return render_template("hello.js")
+@app.route('/script/')  # connects /script/ URL to () function
+def script():
+    return render_template("script")
 
 # this runs the application on the development server
 if __name__ == "__main__":
