@@ -16,7 +16,7 @@ h1 {
   font-family: Courier, Times New Roman,Times, Serif;
 
   padding: 0.5rem;
-  margin: 10px;
+  margin: 7px;
   cursor: pointer;
   text-transform: uppercase;
 
@@ -28,7 +28,7 @@ h1 {
 
 /* Keyboard button display: */
    #keyboard {
-    margin: 12rem 0;
+    margin: 1rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,6 +64,7 @@ h1 {
   transition: 0.3s;
 }
 
+/* Mouse click outline: */
 .howto-button:focus, .settings-button:focus, .keyboard-button:focus {
   outline-color: transparent;
   outline-style:solid;
