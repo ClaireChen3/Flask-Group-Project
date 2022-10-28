@@ -4,7 +4,7 @@ WORKDIR /app
 RUN apt-get update && apt-get upgrade -y && \
   apt-get install -y python3 python3-pip git
 # --- Copy repo you updated with clone or pull ---
-COPY . /app
+RUN git clone https://github.com/ClaireChen3/Flask-Group-Project.git /app
 # --- Install project specific dependencies ---
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN pip3 install gunicorn
