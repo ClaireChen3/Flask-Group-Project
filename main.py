@@ -25,6 +25,10 @@ def stub():
 def WordNerd():
     return render_template("WordNerd.html")
 
+@app.route('/hello/')  # connects /hello/ URL to () function
+def hello():
+    return render_template("hello.js")
+
 # this runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
