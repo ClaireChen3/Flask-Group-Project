@@ -53,9 +53,7 @@ export const WORDS = [
     'bishop',
     'border',
     'bottle',
-    'bottom'.
-    'bought'.
-    'branch',
+    'bottom',
     'breath',
     'bridge',
     'bright',
