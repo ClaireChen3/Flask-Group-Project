@@ -16,7 +16,7 @@ h1 {
   font-family: Courier, Times New Roman,Times, Serif;
 
   padding: 0.5rem;
-  margin: 7px;
+  margin: 0px;
   cursor: pointer;
   text-transform: uppercase;
 
@@ -84,3 +84,5 @@ h1 {
   flex-direction: column;
     align-items: center;
 }
+
+

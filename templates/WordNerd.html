@@ -23,7 +23,7 @@ src="https://code.jquery.com/jquery-3.6.0.min.js"
 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script src="wordinputs.java" type="module"></script>
+<script src="script.js" type="module"></script>
 </body>
 </html>
 
@@ -43,46 +43,56 @@ crossorigin="anonymous"></script>
     </div>
 </body>
 
-
-
-
-<div id="settings">
-    <button class="settings-button">Settings</button>
-</div>
-
-<div id="keyboard">
-    <div class="row1">
-        <button class="keyboard-button">q</button>
-        <button class="keyboard-button">w</button>
-        <button class="keyboard-button">e</button>
-        <button class="keyboard-button">r</button>
-        <button class="keyboard-button">t</button>
-        <button class="keyboard-button">y</button>
-        <button class="keyboard-button">u</button>
-        <button class="keyboard-button">i</button>
-        <button class="keyboard-button">o</button>
-        <button class="keyboard-button">p</button>
-        <button class="keyboard-button">Del</button>
+<body>
+    <div id="settingsbutton" class="container">
+        <button type="submit" class="settings-button">Settings</button>
+        <div class="settings-popup" id="settings-popup">
+            <h2>Settings</h2>
+            <p>Sound</p>
+            <button type="button">Sound</button>
+            <p>Language</p>
+            <p>English</p>
+            <p>Español</p>
+            <button type="button">Close</button>
+            </div>
     </div>
-    <div class="row2">
-        <button class="keyboard-button">a</button>
-        <button class="keyboard-button">s</button>
-        <button class="keyboard-button">d</button>
-        <button class="keyboard-button">f</button>
-        <button class="keyboard-button">g</button>
-        <button class="keyboard-button">h</button>
-        <button class="keyboard-button">j</button>
-        <button class="keyboard-button">k</button>
-        <button class="keyboard-button">l</button>
-        <button class="keyboard-button">Enter</button>
+</body>
+
+<body> 
+    <div id="keyboard">
+        <div class="row1">
+            <button class="keyboard-button">q</button>
+            <button class="keyboard-button">w</button>
+            <button class="keyboard-button">e</button>
+            <button class="keyboard-button">r</button>
+            <button class="keyboard-button">t</button>
+            <button class="keyboard-button">y</button>
+            <button class="keyboard-button">u</button>
+            <button class="keyboard-button">i</button>
+            <button class="keyboard-button">o</button>
+            <button class="keyboard-button">p</button>
+            <button class="keyboard-button">Del</button>
+        </div>
+        <div class="row2">
+            <button class="keyboard-button">a</button>
+            <button class="keyboard-button">s</button>
+            <button class="keyboard-button">d</button>
+            <button class="keyboard-button">f</button>
+            <button class="keyboard-button">g</button>
+            <button class="keyboard-button">h</button>
+            <button class="keyboard-button">j</button>
+            <button class="keyboard-button">k</button>
+            <button class="keyboard-button">l</button>
+            <button class="keyboard-button">Enter</button>
+        </div>
+        <div class="row3">
+            <button class="keyboard-button">z</button>
+            <button class="keyboard-button">x</button>
+            <button class="keyboard-button">c</button>
+            <button class="keyboard-button">v</button>
+            <button class="keyboard-button">b</button>
+            <button class="keyboard-button">n</button>
+            <button class="keyboard-button">m</button>
+        </div>
     </div>
-    <div class="row3">
-        <button class="keyboard-button">z</button>
-        <button class="keyboard-button">x</button>
-        <button class="keyboard-button">c</button>
-        <button class="keyboard-button">v</button>
-        <button class="keyboard-button">b</button>
-        <button class="keyboard-button">n</button>
-        <button class="keyboard-button">m</button>
-    </div>
-</div>
+</body>
