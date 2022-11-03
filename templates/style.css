@@ -12,7 +12,6 @@ h1 {
 
 .howto-container, .settings-container{
     width: 100%
-    height: 100vh
     background: #3c5077;
     display: flex;
     align-items: center;
@@ -37,7 +36,7 @@ h1 {
 }
 
 .howto-popup, .settings-popup{
-    width: 400px
+    width: 200px
     background: #f6f4ee
     border-radius: 5px;
     postion: absolute;
@@ -51,7 +50,6 @@ h1 {
     font-weight: 600;
     font-family: Courier, Times New Roman,Times, Serif;
 
-    padding: 0.5rem;
     border: 2px solid #7C826B;
 
     color: #a36c54;
@@ -143,3 +141,31 @@ h1 {
 }
 
 
+
+#game-board {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.letter-box {
+  border: 2px solid gray;
+  border-radius: 3px;
+  margin: 2px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.filled-box {
+  border: 2px solid black;
+}
+
+.letter-row {
+  display: flex;
+}s
